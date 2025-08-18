@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Length</title>
+</head>
+<body>
+
+    <h1>Length</h1>
+
+    <form method="POST" action="" target="_self">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if show_button %}
+            <button type="submit">Convert</button>
+        {% endif %}
+
+        {% if result %}
+            <p>The result is {{ result }}</p>
+        {% endif %}
+    </form>
+</body>
+</html>
