@@ -11,8 +11,8 @@ def length_converter(request):
         form = LengthForm(request.POST)
         if form.is_valid():
             value = form.cleaned_data["value"]
-            from_convert = form.cleaned_data["from_convert"].lower()
-            to_convert = form.cleaned_data["to_convert"].lower()
+            from_convert = form.cleaned_data["from_convert"]
+            to_convert = form.cleaned_data["to_convert"]
             
             print(value)
             print(from_convert)
