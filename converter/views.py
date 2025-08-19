@@ -18,11 +18,7 @@ def length_converter(request):
             print(from_convert)
             print(to_convert)
             
-            if from_convert in units and to_convert in units:
-                print('correcto')
-            else:
-                print('incorrecto')
-                    
+            
             return render(request, "length.html", {
                 "result": value,
                 'show_button': False,
