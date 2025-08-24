@@ -5,8 +5,6 @@ from .forms import LengthForm
 # Create your views here.
 def length_converter(request):
     
-    units = ('km', 'cm', 'm', 'mm', 'mi', 'yd', 'in', 'ft')
-    
     if request.method == "POST":
         form = LengthForm(request.POST)
         if form.is_valid():
@@ -17,7 +15,6 @@ def length_converter(request):
             print(value)
             print(from_convert)
             print(to_convert)
-            
             
             return render(request, "length.html", {
                 "result": value,
