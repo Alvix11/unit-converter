@@ -29,3 +29,25 @@ def length_conversions(value, from_unit, to_unit):
     
     except KeyError:
         return None
+    
+def weight_conversions(value, from_unit, to_unit):
+    to_grams = {
+        'kg': 1000.0,      # 1 kilogram = 1000 gram
+        'g': 1.0,          # 1 gram = 1 gram (base unit)
+        'mg': 0.001 ,      # 1 milligram = 0.001 gram
+        'oz': 28.3495,     # 1 ounce = 28.3495 gram (exact)
+        'lb': 453.592      # 1 pound = 453.592 gram (exact)
+    }
+    
+    if from_unit == to_unit:
+        return value
+    
+    try:
+        value_in_grams = value * to_grams[from_unit]
+        
+        result = value_in_grams / to_grams[to_unit]
+        
+        return result
+    
+    except KeyError:
+        return None
