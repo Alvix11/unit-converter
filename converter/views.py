@@ -11,8 +11,8 @@ def length_converter(request):
         
         if form.is_valid():
             value = form.cleaned_data["value"]
-            from_unit = form.cleaned_data["from_convert"]
-            to_unit = form.cleaned_data["to_convert"]
+            from_unit = form.cleaned_data["from_unit"]
+            to_unit = form.cleaned_data["to_unit"]
             
             return render(request, 'length.html', {
                 'result': length_conversions(value, from_unit, to_unit),
