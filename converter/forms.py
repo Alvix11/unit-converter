@@ -17,17 +17,44 @@ class LengthForm(forms.Form):
         required=True,
     )
     
-    from_convert = forms.ChoiceField(
+    from_unit = forms.ChoiceField(
         choices=options,
         widget=forms.Select(attrs={'class': 'form-control'}),
         label="Unit to convert from:",
         required=True,
     )
     
-    to_convert = forms.ChoiceField(
+    to_unit = forms.ChoiceField(
         choices=options,
         widget=forms.Select(attrs={'class': 'form-control'}),
         label="Unit to convert to",
-        required="True"
+        required=True,
     )
 
+class WeightForm(forms.Form):
+    options = [
+        ('kg', 'Kilogram'),
+        ('g', 'Gram'),
+        ('mg', 'Miligram'),
+        ('oz', 'Ounce'),
+        ('lb', 'Pound')
+    ]
+    
+    value = forms.FloatField(
+        label="Enter the weight to convert",
+        required=True,
+    )
+    
+    from_unit = forms.ChoiceField(
+        choices=options,
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        label="Unit to convert from:",
+        required=True,
+    )
+    
+    to_unit = forms.ChoiceField(
+        choices=options,
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        label="Unit to convert to",
+        required=True,
+    )
