@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Temperature</title>
+</head>
+<body>
+
+    <h1>Temperature</h1>
+
+    <form action="" method="POST" target="_self">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if show_button %}
+            <button type="submit">Convert</button>
+        {% endif %}
+
+        {% if result %}
+            <p>The result is {{ result }}</p>
+        {% endif %}
+        
+    </form>
+
+</body>
+</html>
