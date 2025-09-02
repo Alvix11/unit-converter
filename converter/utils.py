@@ -51,3 +51,22 @@ def weight_conversions(value, from_unit, to_unit):
     
     except KeyError:
         return None
+
+def temperature_conversions(value, from_unit, to_unit):
+
+    if from_unit == to_unit:
+        return value
+    
+    elif from_unit == 'K':
+        celsius = (value - 32) * 5/9
+    elif from_unit == 'F':
+        celsius = value - 273.15
+    else:
+        celsius = value
+        
+    if to_unit == 'F':
+        return (celsius * 9/5) + 32
+    elif to_unit == 'K':
+        return celsius + 273.15
+    else:
+        return celsius
