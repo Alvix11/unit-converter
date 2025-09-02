@@ -13,7 +13,7 @@ class LengthForm(forms.Form):
     ]
     
     value = forms.FloatField(
-        label="Enter the length to convert",
+        label="Enter the length to convert:",
         required=True,
     )
     
@@ -27,7 +27,7 @@ class LengthForm(forms.Form):
     to_unit = forms.ChoiceField(
         choices=options,
         widget=forms.Select(attrs={'class': 'form-control'}),
-        label="Unit to convert to",
+        label="Unit to convert to:",
         required=True,
     )
 
@@ -41,7 +41,7 @@ class WeightForm(forms.Form):
     ]
     
     value = forms.FloatField(
-        label="Enter the weight to convert",
+        label="Enter the weight to convert:",
         required=True,
     )
     
@@ -55,6 +55,32 @@ class WeightForm(forms.Form):
     to_unit = forms.ChoiceField(
         choices=options,
         widget=forms.Select(attrs={'class': 'form-control'}),
-        label="Unit to convert to",
+        label="Unit to convert to:",
+        required=True,
+    )
+
+class TemperatureForm(forms.Form):
+    options = [
+        ('C', 'Celsius'),
+        ('K', 'Kelvin'),
+        ('F', 'Fahrenheit')
+    ]
+    
+    value = forms.FloatField(
+        label="Enter the temperature to convert:",
+        required=True,
+    )
+    
+    from_unit = forms.ChoiceField(
+        choices=options,
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        label="Unit to convert from:",
+        required=True,
+    )
+    
+    to_unit = forms.ChoiceField(
+        choices=options,
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        label="Unit to convert to:",
         required=True,
     )
