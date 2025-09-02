@@ -58,9 +58,9 @@ def temperature_conversions(value, from_unit, to_unit):
         return value
     
     elif from_unit == 'K':
-        celsius = (value - 32) * 5/9
-    elif from_unit == 'F':
         celsius = value - 273.15
+    elif from_unit == 'F':
+        celsius = (value - 32) * 5/9
     else:
         celsius = value
         
