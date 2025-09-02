@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
-from .forms import LengthForm, WeightForm
-from .utils import length_conversions, weight_conversions
+from .forms import LengthForm, WeightForm, TemperatureForm
+from .utils import length_conversions, weight_conversions, temperature_conversions
 
 # Create your views here.
 def length_converter(request):
@@ -53,4 +53,25 @@ def weight_converter(request):
     )
 
 def temperature_converter(request):
-    return HttpResponse("Esta es la vista de temperature_converter")
+    
+    if request.method == "POST":
+        form = TemperatureForm(request.POST)
+        
+        if form.is_valid():
+            value = form.cleaned_data["value"]
+            from_unit = form.cleaned_data["from_unit"]
+            to_unit = form.cleaned_data["to_unit"]
+            
+            return render(request, 'temperature.html', {
+                'result': temperature_conversions(value, from_unit, to_unit),
+                'show_button': False
+                }
+            )
+    else:
+        form = TemperatureForm()
+        
+    return render(request, 'temperature.html', {
+        'form': form,
+        'show_button': True
+        }
+    )
