@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Length</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <h1>Length</h1>
+    {% block title %}Length{% endblock %}
+    
+    {% block content%}
+    <div class="container mt-5">
+        <div class="container mt-4" style="max-width: 400px;">
+        <h1>Length</h1>
 
-    <form method="POST" action="" target="_self">
-        {% csrf_token %}
-        {{ form.as_p }}
+        <form method="POST" action="" target="_self">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        {% if show_button %}
-            <button type="submit">Convert</button>
-        {% endif %}
+            {% if show_button %}
+                <button type="submit" class="btn btn-outline-primary">Convert</button>
+            {% endif %}
 
-        {% if result %}
-            <p>The result is {{ result }}</p>
-        {% endif %}
-    </form>
-</body>
-</html>
+            {% if result %}
+                <p>The result is {{ result }}</p>
+            {% endif %}
+        </form>
+        </div>
+    </div>
+    {% endblock  %}
