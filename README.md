@@ -1,7 +1,6 @@
 # Unit Converter
 
-A simple Django web application that allows you to convert between different units of **length**, **weight**, and **temperature**.  
-This project is inspired by the [roadmap.sh](https://roadmap.sh/) learning projects and is intended as a practical exercise for backend development with Django.
+A simple Django web application that allows you to convert between different units of **length**, **weight**, and **temperature**. 
 
 ---
 
@@ -22,7 +21,7 @@ This project is inspired by the [roadmap.sh](https://roadmap.sh/) learning proje
     cd Unit-Converter
     python -m venv venv
     source venv/bin/activate
-    pip install django
+    pip install requirements.txt
     ```
 
 2. **Run migrations** (no database models are used, but Django requires this step):
