@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Temperature</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Temperature {% endblock title %}
+
+{% block content %}
 
     <h1>Temperature</h1>
 
-    <form action="" method="POST" target="_self">
+    <form method="POST" action="" target="_self">
         {% csrf_token %}
         {{ form.as_p }}
 
         {% if show_button %}
-            <button type="submit">Convert</button>
+            <button type="submit" class="btn btn-outline-primary">Converter</button>
         {% endif %}
 
         {% if result %}
             <p>The result is {{ result }}</p>
         {% endif %}
-        
     </form>
 
-</body>
-</html>
+{% endblock content %}
+
