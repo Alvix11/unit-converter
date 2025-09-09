@@ -42,7 +42,7 @@ A simple Django web application that allows you to convert between different uni
 
 ## Based on
 
-This project is based on the learning and practice projects suggested by [roadmap.sh](https://roadmap.sh/), a popular resource for developers.
+This project is based on the learning and practice projects suggested by [roadmap.sh](https://roadmap.sh/projects/unit-converter), a popular resource for developers.
 
 ---
 
