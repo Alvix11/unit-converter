@@ -3,7 +3,12 @@
     {% block title %}Length{% endblock %}
     
     {% block content%}
-        <h1>Length</h1>
+    
+        <div class="d-flex align-items-center mb-4">
+            <h1 class="me-3">Length</h1>
+            <a href="{% url 'temperature' %}" class="link-opacity-75 text-decoration-none me-2">Temperature</a>
+            <a href="{% url 'weight' %}" class="link-opacity-75 text-decoration-none">Weight</a>
+        </div>
 
         <form method="POST" action="" target="_self">
             {% csrf_token %}
