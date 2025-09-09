@@ -3,8 +3,8 @@
     {% block title %}Length{% endblock %}
     
     {% block content%}
-    
-        <div class="d-flex align-items-center mb-4">
+
+        <div class="d-flex align-items-center mb-3">
             <h1 class="me-3">Length</h1>
             <a href="{% url 'temperature' %}" class="link-opacity-75 text-decoration-none me-2">Temperature</a>
             <a href="{% url 'weight' %}" class="link-opacity-75 text-decoration-none">Weight</a>
@@ -20,6 +20,7 @@
 
             {% if result %}
                 <p>The result is {{ result }}</p>
+                <a href="{% url 'length' %}" class="btn btn-outline-primary">Convert Again</a>
             {% endif %}
         </form>
     {% endblock  %}
