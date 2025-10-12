@@ -17,7 +17,7 @@ A simple Django web application that allows you to convert between different uni
 1. **Clone the repository** and install dependencies (preferably in a virtual environment):
 
     ```bash
-    git clone <repo-url>
+    git clone <https://github.com/Alvix11/unit-converter.git>
     cd Unit-Converter
     python -m venv venv
     source venv/bin/activate
